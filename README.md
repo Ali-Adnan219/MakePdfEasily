@@ -5,7 +5,7 @@ pip3 install MakePdfEasily
 or 
 pip install MakePdfEasily
 ```
-##Examples
+### Examples
 
 ```bash
 import MakePdfEasily 
