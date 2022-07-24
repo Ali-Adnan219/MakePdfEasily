@@ -4,7 +4,7 @@ version = "0.0.1"
 authors = [
   { name="MakePdfEasily", email="author@example.com" },
 ]
-description ="hijjj"
+description ="hi
 readme = "README.md"
 license = { file="LICENSE" }
 requires-python = ">=3.7"
