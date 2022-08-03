@@ -11,6 +11,6 @@ pip install MakePdfEasily
 import MakePdfEasily 
 
 from  MakePdfEasily import *
-
+#Create a folder first and put all the pictures in it
 print(MakePdf("folder","hi.pdf"))
 ```
