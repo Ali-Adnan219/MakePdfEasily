@@ -1,4 +1,10 @@
 # MakePdfEasily
+
+
+# Choose a language
+[Arabic - العربية](https://github.com/AliAdnanc7/MakePdfEasily/blob/main/languages/Arabic.md)
+
+
 ### to install:
 ```bash
 pip3 install MakePdfEasily
