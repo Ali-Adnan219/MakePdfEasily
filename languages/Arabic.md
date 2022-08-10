@@ -13,4 +13,8 @@ import MakePdfEasily
 from  MakePdfEasily import *
 #يجب انشاء مجلد و وضع جميع صور فيه و اختيار اسم ملف pdf
 print(MakePdf("folder","hi.pdf"))
+
+#لدمج ملفات pdf 
+
+print(mergerPDf("folder","hi.pdf"))
 ```
