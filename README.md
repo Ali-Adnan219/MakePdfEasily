@@ -1,7 +1,7 @@
 # MakePdfEasily
 
 
-# Choose a language
+### Choose a language
 [Arabic - العربية](https://github.com/AliAdnanc7/MakePdfEasily/blob/main/languages/Arabic.md)
 
 
