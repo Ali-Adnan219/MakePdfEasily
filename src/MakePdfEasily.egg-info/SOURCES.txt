@@ -1,0 +1,11 @@
+LICENSE
+README.md
+pyproject.toml
+setup.cfg
+src/MakePdfEasily.py
+src/__init__.py
+src/MakePdfEasily.egg-info/PKG-INFO
+src/MakePdfEasily.egg-info/SOURCES.txt
+src/MakePdfEasily.egg-info/dependency_links.txt
+src/MakePdfEasily.egg-info/requires.txt
+src/MakePdfEasily.egg-info/top_level.txt

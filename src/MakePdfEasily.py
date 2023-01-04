@@ -2,7 +2,7 @@ import os
 from os import listdir
 from PIL import Image
 import PyPDF2
-from PyPDF2 import PdfFileMerger
+from PyPDF2 import PdfMerger
 
 
 #Create a pdf file using images
@@ -36,7 +36,7 @@ def mergerPDf(Path,NamePdf):
             a = Path +"/"+ list
             PDFS .append(a)
         pdfs = PDFS
-        merger = PdfFileMerger()
+        merger = PdfMerger()
         for pdf in pdfs:
             merger.append(pdf)
         merger.write(NamePdf)

@@ -6,7 +6,7 @@ import time
 import shutil
 
 
-TELEGRAM_TOKEN="5689364691:AAHILlRscQ_F2WzBZ90BnOXHcW30FryMaiU"
+TELEGRAM_TOKEN="Token"
 
 bot = telebot.TeleBot(TELEGRAM_TOKEN, parse_mode=None )
 
@@ -25,13 +25,13 @@ except OSError as error:
 @bot.message_handler(commands=['pdf'] )
 def convert_to_pdf(message):
     path_img="./img/"+str(message.from_user.id)
-    path_pdf="./pdf/"+str(message.from_user.id)
+    path_pdf="./pdf/"+str(message.from_user.id)+".pdf"
     if  os.path.exists(path_img) == True:
-        MakePdf(path_img,"./pdf/"+str(message.from_user.id)+".pdf")
+        MakePdf(path_img,path_pdf)
         i = open(path_pdf, 'rb')
         bot.send_document(message.chat.id, i ,caption= "here pdf" ,reply_to_message_id=message.message_id)
         shutil.rmtree(path_img)
-        shutil.rmtree(path_pdf)
+        os.remove(path_pdf)
     else:
         bot.send_message(message.chat.id,txtword[1] ,reply_to_message_id=message.message_id)
 
@@ -49,7 +49,7 @@ def name(message):
             try: 
                 os.mkdir("./img/"+str(message.from_user.id)) 
             except OSError as error: 
-                bot.send_message(message.chat.id,error ,reply_to_message_id=message.message_id)
+                pass
             path = "./img/"+str(message.from_user.id)+"/"+raw + ".jpg"
             file_info = bot.get_file(raw)
             downloaded_file = bot.download_file(file_info.file_path)
