@@ -19,8 +19,7 @@ txtword=["Picture saved successfully...send word\n/pdf\nCreate a pdf file","He d
 try:
     for names in ["img","pdf"]:
         os.mkdir(names) 
-except OSError as error: 
-    pass
+except:pass
 
 @bot.message_handler(commands=['pdf'] )
 def convert_to_pdf(message):
@@ -28,8 +27,7 @@ def convert_to_pdf(message):
     path_pdf="./pdf/"+str(message.from_user.id)+".pdf"
     if  os.path.exists(path_img) == True:
         MakePdf(path_img,path_pdf)
-        i = open(path_pdf, 'rb')
-        bot.send_document(message.chat.id, i ,caption= "here pdf" ,reply_to_message_id=message.message_id)
+        bot.send_document(message.chat.id, open(path_pdf, 'rb') ,caption= "here pdf" ,reply_to_message_id=message.message_id)
         shutil.rmtree(path_img)
         os.remove(path_pdf)
     else:
