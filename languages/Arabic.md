@@ -18,3 +18,6 @@ print(MakePdf("folder","hi.pdf"))
 
 print(mergerPDf("folder","hi.pdf"))
 ```
+### بوتات تلكرام مع  MakePdfEasily
+
+[pytelegrambotapi](https://github.com/Ali-Adnan219/MakePdfEasily/blob/main/Examples/Telegram%20bot/pytelegrambotapi%20with%20MakePdfEasily/main.py)
