@@ -5,6 +5,7 @@ import PyPDF2
 from PyPDF2 import PdfMerger
 
 
+
 #Create a pdf file using images
 def MakePdf(Path, NamePdf):
     try:
