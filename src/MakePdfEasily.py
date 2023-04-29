@@ -6,41 +6,31 @@ from PyPDF2 import PdfMerger
 
 
 #Create a pdf file using images
-def MakePdf(Path,NamePdf):
+def MakePdf(Path, NamePdf):
     try:
-        imagenes = []
+        imagenes = [os.path.join(Path, filename) for filename in os.listdir(Path)]
+        sorted_imagenes = sorted(imagenes, key=lambda x: os.path.basename(x))
         images_list = []
-        listarImagenes  = listdir(Path)
-        for list in listarImagenes:  
-            a = Path +"/"+ list
-            imagenes.append(a)
-        #print(imagenes)
-        for f in imagenes:
+        for f in sorted_imagenes:
             try:
-                #print(f)
                 images_list.append((Image.open(f)).convert('RGB'))
             except IOError as er:
+                print(er)
                 return er
         images_list[0].save(NamePdf, save_all=True, append_images=images_list[1:])
-        return "./"+NamePdf
+        return "./" + NamePdf
     except Exception as err:
+        print(err)
         return err
 
 #Merge pdf files
 def mergerPDf(Path,NamePdf):
-    
     try:
-        PDFS = []
-        listarPDf  = listdir(Path)
-        for list in listarPDf:  
-            a = Path +"/"+ list
-            PDFS .append(a)
-        pdfs = PDFS
+        PDFS = [os.path.join(Path, f) for f in sorted(os.listdir(Path), key=os.path.basename)]
         merger = PdfMerger()
-        for pdf in pdfs:
-            merger.append(pdf)
-        merger.write(NamePdf)
-        merger.close()
+        [merger.append(pdf) for pdf in PDFS]
+        merger.write(NamePdf); merger.close()
         return "./"+NamePdf
     except Exception as err:
+        print(err)
         return err
