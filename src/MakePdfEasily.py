@@ -4,7 +4,20 @@ from PIL import Image
 import PyPDF2
 from PyPDF2 import PdfMerger
 
-
+def Make_one_pdf(Path, NamePdf):
+    try:
+        images_list = []
+        for f in [Path]:
+            try:
+                images_list.append((Image.open(f)).convert('RGB'))
+            except IOError as er:
+                print(er)
+                return er
+        images_list[0].save(NamePdf, save_all=True, append_images=images_list[1:])
+        return "./" + NamePdf
+    except Exception as err:
+        print(err)
+        return err
 
 #Create a pdf file using images
 def MakePdf(Path, NamePdf):
@@ -35,3 +48,6 @@ def mergerPDf(Path,NamePdf):
     except Exception as err:
         print(err)
         return err
+
+
+
